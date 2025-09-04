@@ -7,11 +7,16 @@ format:
     logo: images/logo_cefil_new.jpg
 ---
 
+
+**Août 2025**
+
 # Indicateurs {orientation="columns"}
 
-## Connexions uniques {width="40%"}
+## Connexions uniques {width="50%"}
 
-### Row {height="20%"}
+
+
+### Row {height="30%"}
 
 ```{r}
 #| content: valuebox
@@ -24,15 +29,15 @@ format:
 ### Row {height="50%"}
 
 ```{r}
-#| fig-width: 10
+#| fig-width: 14
 #| fig-height: 8
 #| title: "Evolution du nombre de connexions uniques"
 plot(iris$Sepal.Length,iris$Sepal.Width)
 ```
 
-## Stats sur les e-formations {width="60%"}
+## Stats sur les e-formations {width="50%"}
 
-### Row {height="20%"}
+### Row {height="30%"}
 
 ```{r}
 #| content: valuebox
@@ -61,7 +66,7 @@ knitr::kable(mtcars)
 
 ## Connexions uniques
 
--   [N**ombre de connexions uniques** :]{.underline} correspond au **nombre distinct d'utilisateurs** qui se sont connectés au moins une fois à votre plateforme pendant le mois en cours.
+-   [N**ombre de connexions uniques** :]{.underline} correspond au **nombre distinct d'utilisateurs** qui se sont connectés au moins une fois à Maskaret pendant le mois en cours.
 
 ## Formations disponibles
 
