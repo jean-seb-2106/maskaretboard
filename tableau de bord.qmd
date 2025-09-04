@@ -5,12 +5,15 @@ format:
   dashboard:
     theme: superhero
     logo: images/logo_cefil_new.jpg
+    self-contained: true
 ---
-
 
 **Août 2025**
 
+
 # Indicateurs {orientation="columns"}
+
+
 
 ## Connexions uniques {width="50%"}
 
@@ -26,12 +29,12 @@ format:
 84
 ```
 
-### Row {height="50%"}
+### Row {height="70%"}
 
 ```{r}
 #| fig-width: 14
 #| fig-height: 8
-#| title: "Evolution du nombre de connexions uniques"
+#| title: "Evolution mensuelle du nombre de connexions uniques depuis avril 2025"
 plot(iris$Sepal.Length,iris$Sepal.Width)
 ```
 
@@ -55,7 +58,7 @@ plot(iris$Sepal.Length,iris$Sepal.Width)
 38
 ```
 
-### Row {height="50%"}
+### Row {height="70%"}
 
 ```{r}
 #| title: "TOP 10 des cours les plus suivis"
