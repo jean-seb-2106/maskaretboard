@@ -13,25 +13,25 @@ format:
 
 ```{r}
 #| content: valuebox
-#| title: "Nombre de connexions uniques"
-#| icon: pencil
+#| title: "Connexions uniques"
+#| icon: plug
 #| color: primary
 84
 ```
 
 ```{r}
 #| content: valuebox
-#| title: "Nombre de e-formation disponibles"
+#| title: "e-formation disponibles"
 #| icon: pencil
-#| color: primary
+#| color: success
 38
 ```
 
 ```{r}
 #| content: valuebox
-#| title: "Nombre de badges obtenus"
-#| icon: pencil
-#| color: primary
+#| title: "Badges délivrés"
+#| icon: trophy
+#| color: warning
 38
 ```
 
@@ -52,3 +52,5 @@ knitr::kable(mtcars)
 # Lexique
 
 -   Le **nombre de connexions uniques** correspond au **nombre distinct d'utilisateurs** qui se sont connectés **au moins une fois** à votre plateforme pendant le mois en cours.
+
+-   Un **badge** est délivré aux apprenants quand ils ont achevé toutes les activités d'un cours (une e-formation), notamment quand ils ont obtenus au moins 70% de bonnes réponses aux quiz de ce cours.
