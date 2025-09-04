@@ -6,23 +6,37 @@ format:
     logo: images/logo_cefil_new.jpg
 ---
 
-## Quarto
+## Chiffres clés
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+```{r}
+#| content: valuebox
+#| title: "Nombre de connexions uniques"
+#| icon: pencil
+#| color: primary
+84
+```
+
+```{r}
+#| content: valuebox
+#| title: "Nombre de e-formation disponibles"
+#| icon: pencil
+#| color: primary
+38
+```
+
+```{r}
+#| content: valuebox
+#| title: "Nombre de badges obtenus"
+#| icon: pencil
+#| color: primary
+38
+```
 
 ## Running Code
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
 ```{r}
-1 + 1
+#| fig-width: 10
+#| fig-height: 8
+#| title: "Evolution du nombre de connexions uniques"
+plot(cars)
 ```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
