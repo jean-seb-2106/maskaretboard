@@ -1,10 +1,13 @@
 ---
-title: "Tableau de bord Maskaret"
+title: "Tableau de bord mensuel Maskaret"
 author: "Equipe TICE"
 format: 
   dashboard:
+    theme: superhero
     logo: images/logo_cefil_new.jpg
 ---
+
+# Indicateurs
 
 ## Chiffres clés
 
@@ -38,5 +41,14 @@ format:
 #| fig-width: 10
 #| fig-height: 8
 #| title: "Evolution du nombre de connexions uniques"
-plot(cars)
+plot(iris$Sepal.Length,iris$Sepal.Width)
 ```
+
+```{r}
+#| title: "TOP 10 des cours les plus suivis"
+knitr::kable(mtcars)
+```
+
+# Lexique
+
+-   Le **nombre de connexions uniques** correspond au **nombre distinct d'utilisateurs** qui se sont connectés **au moins une fois** à votre plateforme pendant le mois en cours.
