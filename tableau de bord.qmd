@@ -7,9 +7,11 @@ format:
     logo: images/logo_cefil_new.jpg
 ---
 
-# Indicateurs
+# Indicateurs {orientation="columns"}
 
-## Chiffres clés
+## Connexions uniques {width="40%"}
+
+### Row {height="20%"}
 
 ```{r}
 #| content: valuebox
@@ -18,6 +20,19 @@ format:
 #| color: primary
 84
 ```
+
+### Row {height="50%"}
+
+```{r}
+#| fig-width: 10
+#| fig-height: 8
+#| title: "Evolution du nombre de connexions uniques"
+plot(iris$Sepal.Length,iris$Sepal.Width)
+```
+
+## Stats sur les e-formations {width="60%"}
+
+### Row {height="20%"}
 
 ```{r}
 #| content: valuebox
@@ -35,14 +50,7 @@ format:
 38
 ```
 
-## Running Code
-
-```{r}
-#| fig-width: 10
-#| fig-height: 8
-#| title: "Evolution du nombre de connexions uniques"
-plot(iris$Sepal.Length,iris$Sepal.Width)
-```
+### Row {height="50%"}
 
 ```{r}
 #| title: "TOP 10 des cours les plus suivis"
@@ -51,6 +59,14 @@ knitr::kable(mtcars)
 
 # Lexique
 
--   Le **nombre de connexions uniques** correspond au **nombre distinct d'utilisateurs** qui se sont connectés **au moins une fois** à votre plateforme pendant le mois en cours.
+## Connexions uniques
 
--   Un **badge** est délivré aux apprenants quand ils ont achevé toutes les activités d'un cours (une e-formation), notamment quand ils ont obtenus au moins 70% de bonnes réponses aux quiz de ce cours.
+-   [N**ombre de connexions uniques** :]{.underline} correspond au **nombre distinct d'utilisateurs** qui se sont connectés au moins une fois à votre plateforme pendant le mois en cours.
+
+## Formations disponibles
+
+-   [**Formations disponibles** :]{.underline} ce sont les formations hébergées sur MasKaret, auxquelles les apprenants peuvent s'inscrire. Ils peuvent s'y inscrire soit en **auto-inscription** soit en **inscription manuelle** (par l'administrateur de la plateforme). Les espaces de ressources pour les stagiaires du Cefil ne sont pas comptabilisés comme des formations.
+
+## Badges
+
+-   [Un **badge**]{.underline} est délivré aux apprenants quand ils ont achevé toutes les activités d'un cours (une e-formation). Il faut notamment qu'ils aient obtenu au moins 70% de bonnes réponses aux quiz de ce cours.
