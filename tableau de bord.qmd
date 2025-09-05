@@ -10,6 +10,7 @@ format:
 
 ```{r}
 library(ggplot2)
+library(dplyr)
 ```
 
 ```{r}
@@ -19,7 +20,24 @@ connexions <- read.csv(file = "data/connexions_uniques.csv",
                        col.names = c("nombre_connexions","mois"))
 connexions$mois <- as.Date(paste0(connexions$mois, "-01"), format = "%Y-%m-%d")
 
+nb_connexions <- connexions[8,1]
 
+#Liste des e-formations sur Maskaret (hors ressources pédagos)
+cours_populaires <- read.csv(file = "data/cours_populaires.csv",
+                       sep = ";",
+                       header = FALSE,
+                       col.names = c("id","nom","catégorie1","catégorie2","étudiants_actifs","activités","inscrits","badges")) %>%  
+  filter(catégorie2 != "Ressources pédagogiques CEFIL") %>% 
+  filter(id != 1)
+
+nb_cours <- length(cours_populaires$id)-1
+
+cours_populaires_10 <- cours_populaires %>%  
+  select(-c("id","catégorie2")) %>% 
+  head(10)
+
+
+badges <- sum(cours_populaires$badges)
 
 ```
 
@@ -36,7 +54,7 @@ connexions$mois <- as.Date(paste0(connexions$mois, "-01"), format = "%Y-%m-%d")
 #| title: "Connexions uniques"
 #| icon: plug
 #| color: primary
-84
+nb_connexions
 ```
 
 ### Row {height="70%"}
@@ -54,7 +72,7 @@ ggplot(connexions, aes(x = mois, y = nombre_connexions)) +
     y = "Nombre de connexions"
   ) +
   theme_minimal() +  # Thème épuré
-  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")  # Format des dates
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
 ```
 
 ## Stats sur les e-formations {width="50%"}
@@ -66,7 +84,7 @@ ggplot(connexions, aes(x = mois, y = nombre_connexions)) +
 #| title: "e-formation disponibles"
 #| icon: pencil
 #| color: success
-38
+nb_cours
 ```
 
 ```{r}
@@ -74,14 +92,14 @@ ggplot(connexions, aes(x = mois, y = nombre_connexions)) +
 #| title: "Badges délivrés"
 #| icon: trophy
 #| color: warning
-38
+badges
 ```
 
 ### Row {height="70%"}
 
 ```{r}
 #| title: "TOP 10 des cours les plus suivis"
-knitr::kable(mtcars)
+knitr::kable(cours_populaires_10)
 ```
 
 # Lexique
