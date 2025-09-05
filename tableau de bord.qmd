@@ -8,16 +8,26 @@ format:
     self-contained: true
 ---
 
-**Août 2025**
+```{r}
+library(ggplot2)
+```
 
+```{r}
+connexions <- read.csv(file = "data/connexions_uniques.csv",
+                       sep = ";",
+                       header = FALSE,
+                       col.names = c("nombre_connexions","mois"))
+connexions$mois <- as.Date(paste0(connexions$mois, "-01"), format = "%Y-%m-%d")
+
+
+
+```
+
+**Août 2025**
 
 # Indicateurs {orientation="columns"}
 
-
-
 ## Connexions uniques {width="50%"}
-
-
 
 ### Row {height="30%"}
 
@@ -34,8 +44,17 @@ format:
 ```{r}
 #| fig-width: 14
 #| fig-height: 8
-#| title: "Evolution mensuelle du nombre de connexions uniques depuis avril 2025"
-plot(iris$Sepal.Length,iris$Sepal.Width)
+#| title: "Evolution mensuelle du nombre de connexions uniques"
+ggplot(connexions, aes(x = mois, y = nombre_connexions)) +
+  geom_line(color = "blue", size = 1) +  # Ligne bleue
+  geom_point(color = "red", size = 2) +   # Points rouges
+  labs(
+    title = "Évolution du nombre de connexions uniques",
+    x = "Mois",
+    y = "Nombre de connexions"
+  ) +
+  theme_minimal() +  # Thème épuré
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")  # Format des dates
 ```
 
 ## Stats sur les e-formations {width="50%"}
